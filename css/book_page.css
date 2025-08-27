@@ -15,7 +15,6 @@
 }
 
 .book_info{
-    border: 1px solid red;
 
     width: 60%;
     font-family: Anonymous Pro, serif;
@@ -32,7 +31,6 @@
 
 
 .image {
-    border: 1px solid green;
 
 
     width: 40%;

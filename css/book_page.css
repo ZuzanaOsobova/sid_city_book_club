@@ -34,13 +34,16 @@
 
 
     width: 40%;
-    max-width: 500px;
     height: 60%;
-    object-fit: contain;
+
+    display: flex;
+    justify-content: center;
 
     float: right;
 }
 .image img {
+
+    max-width: 400px;
     width: 100%;
     height: auto;
 }

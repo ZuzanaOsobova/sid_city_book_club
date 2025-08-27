@@ -1,0 +1,14 @@
+<span class=comment>/* List */</span>
+cc334c, edf2fa, 0cb596, 40497e, 242738
+#cc334c, #edf2fa, #0cb596, #40497e, #242738
+0xcc334c, 0xedf2fa, 0x0cb596, 0x40497e, 0x242738
+
+<span class=comment>/* Comma Separated */</span>
+cc334c,edf2fa,0cb596,40497e,242738
+#cc334c,#edf2fa,#0cb596,#40497e,#242738
+0xcc334c,0xedf2fa,0x0cb596,0x40497e,0x242738
+
+<span class=comment>/* Array */</span>
+["cc334c","edf2fa","0cb596","40497e","242738"]
+["#cc334c","#edf2fa","#0cb596","#40497e","#242738"]
+["0xcc334c","0xedf2fa","0x0cb596","0x40497e","0x242738"]

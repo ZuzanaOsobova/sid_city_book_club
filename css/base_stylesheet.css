@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Bahnschrift, serif;
+}
+
+header {
+    width: 100%;
+    padding: 1%;
+    background-color: var(--blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+header h1 {
+    display: none;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+header span {
+    position: absolute;
+    right: 5%;
+}
+
+body {
+    background-color: var(--white);
+}
+
+main {
+    border: solid 1px black;
+
+    padding: 2%;
+}
+
+h2 {
+    font-family: Bahnschrift, serif;
+}
+
+.about {
+    font-family: Anonymous Pro;
+}

@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Bahnschrift, serif;
 }
 
 header {
@@ -34,15 +33,17 @@ body {
 }
 
 main {
-    border: solid 1px black;
-
-    padding: 2%;
+    padding: 2.5%;
+    align-items: center;
+    align-content: center;
 }
 
 h2 {
     font-family: Bahnschrift, serif;
+    padding: 15px;
 }
 
 .about {
-    font-family: Anonymous Pro;
+    font-family: Anonymous Pro, serif;
+    color: var(--black);
 }

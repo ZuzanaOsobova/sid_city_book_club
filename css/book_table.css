@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.book_table {
+    width: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 3px solid var(--blue);
+    height: 50px;
+}
+
+
+thead {
+    color: var(--green);
+    font-family: Bahnschrift, serif;
+    font-size: 1em;
+}
+
+tbody {
+    font-family: Anonymous Pro, serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--blue);
+}
+
+.year {
+    width: 7%;
+}
+
+.month {
+    width: 13%;
+    padding: 5px;
+}
+
+.book {
+    width: 45%;
+    text-align: left;
+}
+
+.author {
+    width: 25%;
+    text-align: left;
+}
+
+.more {
+    width: 10%;
+}
+
+tr:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+tr:hover a {
+    background-color: transparent;
+    color: var(--white);
+}
+
+tr:hover a img{
+    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(86%) sepia(25%) saturate(187%) hue-rotate(194deg) brightness(107%) contrast(96%);
+}
+
+thead tr:hover {
+    background-color: var(--white);
+    color: var(--green);
+
+}
+
+.more a {
+    width: 90%;
+    max-width: 100px;
+    min-width: 70px;
+    border: 3px solid;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--blue);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+
+}
+
+
+.more a img {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    fill: var(--blue);
+    filter: brightness(0) saturate(100%) invert(26%) sepia(14%) saturate(2004%) hue-rotate(194deg) brightness(101%) contrast(89%);
+
+}
+

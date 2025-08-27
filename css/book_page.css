@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.book_page {
+
+
+    color: var(--black);
+
+
+    overflow: hidden;
+
+}
+
+.book_info{
+    border: 1px solid red;
+
+    width: 60%;
+    font-family: Anonymous Pro, serif;
+    padding: 2%;
+
+
+}
+
+.book_info div {
+
+    padding: 1%;
+    overflow: hidden;
+}
+
+
+.image {
+    border: 1px solid green;
+
+
+    width: 40%;
+    max-width: 500px;
+    height: 60%;
+    object-fit: contain;
+
+    float: right;
+}
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.info {
+}
+
+.info_label {
+    font-weight: bold;
+    color: var(--blue);
+    float: left;
+    margin: 0;
+    padding-right: 5px;
+
+}
+
+.info_text {
+}

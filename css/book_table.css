@@ -110,5 +110,5 @@ thead tr:hover {
     cursor: pointer;
 }
 .more a:hover img {
-    filter: brightness(0) saturate(100%) invert(26%) sepia(11%) saturate(2727%) hue-rotate(194deg) brightness(98%) contrast(88%);;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(17%) saturate(1464%) hue-rotate(194deg) brightness(101%) contrast(97%);
 }

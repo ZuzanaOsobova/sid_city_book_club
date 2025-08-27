@@ -92,6 +92,7 @@ thead tr:hover {
     margin-right: auto;
 
     display: flex;
+    justify-content: center;
     align-items: center;
 
 }
@@ -99,11 +100,15 @@ thead tr:hover {
 
 .more a img {
 
-    margin-left: auto;
-    margin-right: auto;
-
     fill: var(--blue);
     filter: brightness(0) saturate(100%) invert(26%) sepia(14%) saturate(2004%) hue-rotate(194deg) brightness(101%) contrast(89%);
 
 }
 
+.more a:hover {
+    color: var(--blue);
+    cursor: pointer;
+}
+.more a:hover img {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(11%) saturate(2727%) hue-rotate(194deg) brightness(98%) contrast(88%);;
+}

@@ -34,7 +34,7 @@
 
 
     width: 40%;
-    height: 60%;
+    height: auto;
 
     display: flex;
     justify-content: center;
@@ -61,4 +61,34 @@
 }
 
 .info_text {
+}
+
+.back_button {
+    max-width: 100px;
+    min-width: 70px;
+    border: 3px solid;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--blue);
+    font-family: Anonymous Pro, serif;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+
+    margin-left: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.back_button img {
+    padding-right: 5%;
+}
+
+.back_button:hover {
+    color: var(--green);
 }

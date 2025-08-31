@@ -13,8 +13,8 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connection successful";
-} catch (PDOException $e) {
 
+} catch (PDOException $e) {
 
     // Print an error message to indicate failure to connect to DB
     echo "Connection failed: " . $e->getMessage();

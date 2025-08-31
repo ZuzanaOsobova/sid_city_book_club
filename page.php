@@ -15,9 +15,7 @@ $book_recommended = "";
 $book_genre = "";
 $book_description = "";
 $book_thoughts = "";
-
-//working help
-$book_cover = "images/dune.jpg";
+$book_cover = "";
 
 
 
@@ -59,7 +57,7 @@ catch (PDOException $e) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="icons/logo_dark.svg" >
-    <title></title>
+    <title><?php echo $book_name?></title>
 
     <link rel="stylesheet" href="css/base_stylesheet.css">
     <link rel="stylesheet" href="css/colours.css">
@@ -125,21 +123,9 @@ catch (PDOException $e) {
             </div>
         </div>
 
-
-
-
-
-
-
     </div>
 
-
-
-
-
 </main>
-
-
 
 </body>
 </html>

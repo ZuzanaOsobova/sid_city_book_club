@@ -70,7 +70,7 @@ require_once 'includes/months.inc.php';
                     ?>
                     <tr>
                         <td class="year"><?php echo $item['year']?></td>
-                        <td class="month"><?php months($item['month']); ?></td>
+                        <td class="month"><?php echo months($item['month']); ?></td>
                         <td class="book"><?php echo $item['name']?></td>
                         <td class="author"><?php echo $item['author']?></td>
                         <td class="more"><a href="page.php?id=<?php echo $item['id']?>">MORE<img src="icons/arrow_right.svg"></a></td>

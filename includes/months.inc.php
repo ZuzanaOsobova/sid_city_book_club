@@ -3,29 +3,31 @@
 function months($month)
 {
     switch ($month){
-        case 1: echo "January"; break;
+        case 1: return "January";
 
-        case 2: echo "February"; break;
+        case 2: return "February";
 
-        case 3: echo "March"; break;
+        case 3: return "March";
 
-        case 4: echo "April"; break;
+        case 4: return "April";
 
-        case 5: echo "May"; break;
+        case 5: return "May";
 
-        case 6: echo "June"; break;
+        case 6: return "June";
 
-        case 7: echo "July"; break;
+        case 7: return "July";
 
-        case 8: echo "August"; break;
+        case 8: return "August";
 
-        case 9: echo "September"; break;
+        case 9: return "September";
 
-        case 10: echo "October"; break;
+        case 10: return "October";
 
-        case 11: echo "November"; break;
+        case 11: return "November";
 
-        case 12: echo "December"; break;
+        case 12: return "December";
+
+        default: return "No Month, there's a problem somewhere";
     }
 
 }

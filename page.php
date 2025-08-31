@@ -97,7 +97,7 @@ catch (PDOException $e) {
                 <span class="info_label">Month read: </span>
                 <span class="info_text">
                     <?php
-                    months($book_month);
+                    echo months($book_month);
                     ?>
                 </span>
             </div>

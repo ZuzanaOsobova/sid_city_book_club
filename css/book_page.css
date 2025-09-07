@@ -6,17 +6,14 @@
 
 .book_page {
 
-
     color: var(--black);
 
-
-    overflow: hidden;
+    overflow: auto;
 
 }
 
 .book_info{
 
-    width: 60%;
     font-family: Anonymous Pro, serif;
     padding: 2%;
 
@@ -35,9 +32,6 @@
 
     width: 40%;
     height: 60%;
-
-    display: flex;
-    justify-content: center;
 
     float: right;
 }

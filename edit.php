@@ -15,7 +15,7 @@
 <body>
 
 <header>
-    <a href="index.html"><div class="logo"><img src="icons/logo_light.svg"></div></a>
+    <a href="index.php"><div class="logo"><img src="icons/logo_light.svg"></div></a>
     <h1>SidCity Book Club</h1>
     <span style="font-family: Bahnschrift,serif;">*A LOT OF PHOTOS OF SID READING INCOMING*</span>
 </header>
@@ -69,7 +69,7 @@
 
             <div class="buttons">
                 <input type="submit" value="SUBMIT" class="btn submit">
-                <a href="index.html" class="btn back">BACK</a>
+                <a href="index.php" class="btn back">BACK</a>
                 <button onclick="" class="btn delete">DELETE</button>
             </div>
 

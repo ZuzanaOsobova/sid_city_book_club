@@ -36,6 +36,9 @@ require_once 'includes/months.inc.php';
     <div class="about">
         <p>Hello there Traveller.</p>
         <p>This is website dedicated to the SidCity Book Club, which we are having over at Discord. We have read quite a few books, so I have decided to create a website where we can store them all, see when we read what and how we liked it.</p>
+
+        <br>
+        <a href="edit.php">THIS WAY TO EDIT</a>
     </div>
 
 

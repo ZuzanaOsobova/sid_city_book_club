@@ -125,6 +125,8 @@ catch (PDOException $e) {
 
     </div>
 
+    <a href="edit.php?id=<?php echo $book_id;?>" class="back_button" id="edit_btn">EDIT</a>
+
 </main>
 
 </body>

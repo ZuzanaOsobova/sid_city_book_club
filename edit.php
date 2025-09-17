@@ -3,9 +3,13 @@ require_once 'includes/dbh.inc.php';
 require_once 'includes/months.inc.php';
 
 
-if (isset($_GET['id'])){
+if (!empty($_GET['id'])){
     $book_id = $_GET['id'];
+} else {
+    $book_id = null;
 }
+
+//ZKONTROLOVAT, ZDA ID EXISTUJE V NAŠÍ DATABÁZI, A TAKY ZDA UŽIVATEL EXISTUJE A MŮŽE TÍM PÁDEM UPRAVOVAT
 
 $book_name= "";
 $book_author= "";
@@ -84,7 +88,9 @@ if(!empty($book_id)){
 
     <div class="edit">
 
-        <form>
+        <form action="includes/save.inc.php" method="POST">
+
+            <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($book_id);?>">
 
             <label for="name">Name of the book :</label><br>
             <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($book_name);?>"><br>
@@ -126,16 +132,20 @@ if(!empty($book_id)){
             <label for="thoughts">Book Club Thoughts :</label><br>
             <textarea id="thoughts" name="thoughts"><?php echo htmlspecialchars($book_thoughts);?></textarea> <br>
 
+
+            <!--
             <label for="cover">Book cover :</label><br>
             <input type="file" id="cover" name="cover"> <br>
 
-            <?php
+            <?php /*
             if ($book_cover === ""){
                 echo "No book cover";
             } else {
                 echo "Current book cover: " . htmlspecialchars($book_cover);
-            }
+            } */
             ?>
+
+            -->
 
             <div class="buttons">
                 <input type="submit" value="SUBMIT" class="btn submit">

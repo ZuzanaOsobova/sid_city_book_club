@@ -6,7 +6,7 @@ require_once 'dbh.inc.php';
 if (!empty($_POST['id'])){
     $book_id = $_POST['id'];
 } else {
-    $book_id = "BITCH";
+    $book_id = null;
 }
 
 $book_name= $_POST["name"];
@@ -35,10 +35,8 @@ if(!empty($book_id)){
                 recommended = :book_recommended,
                 genre = :book_genre,
                 description = :book_description,
-                thoughts = :book_thoughts,
+                thoughts = :book_thoughts
                 
-                --cover = :book_cover 
-                      
                 WHERE id = :book_id;
                       
              ";
@@ -67,4 +65,35 @@ if(!empty($book_id)){
     catch (PDOException $e) {
         echo $e->getMessage();
     }
+} else {
+
+    try {
+        $query = "
+        INSERT INTO books (name, year, author, month, recommended, genre, description, thoughts)
+        VALUES (:book_name, :book_year, :book_author, :book_month, :book_recommended, :book_genre, :book_description, :book_thoughts)
+        ";
+
+
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":book_name", $book_name);
+        $stmt->bindParam(":book_year", $book_year);
+        $stmt->bindParam(":book_author", $book_author);
+        $stmt->bindParam(":book_month", $book_month);
+        $stmt->bindParam(":book_recommended", $book_recommended);
+        $stmt->bindParam(":book_genre", $book_genre);
+        $stmt->bindParam(":book_description", $book_description);
+        $stmt->bindParam(":book_thoughts", $book_thoughts);
+
+        //$stmt->bindParam(":book_cover", $book_cover);
+
+        $stmt->execute();
+
+        header("Location:../index.php");
+        //header("Location:../page.php?id=".$book_id);
+    }
+
+    catch (PDOException $e) {
+    echo $e->getMessage();
+}
+
 }

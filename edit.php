@@ -9,12 +9,12 @@ if (!empty($_GET['id'])){
     $book_id = null;
 }
 
-//ZKONTROLOVAT, ZDA ID EXISTUJE V NAŠÍ DATABÁZI, A TAKY ZDA UŽIVATEL EXISTUJE A MŮŽE TÍM PÁDEM UPRAVOVAT
+//TODO ZKONTROLOVAT, ZDA ID EXISTUJE V NAŠÍ DATABÁZI, A TAKY ZDA UŽIVATEL EXISTUJE A MŮŽE TÍM PÁDEM UPRAVOVAT
 
 $book_name= "";
 $book_author= "";
 $book_year = 2020;
-$book_month = 0;
+$book_month = 1;
 $book_recommended = "";
 $book_genre = "";
 $book_description = "";

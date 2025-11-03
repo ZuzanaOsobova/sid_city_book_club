@@ -150,7 +150,9 @@ if(!empty($book_id)){
             <div class="buttons">
                 <input type="submit" value="SUBMIT" class="btn submit">
                 <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "page.php?id=".$book_id;}?>" class="btn back">BACK</a>
-                <button onclick="" class="btn delete">DELETE</button>
+
+                <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "includes/delete.inc.php?id=".$book_id;} ?>" class="btn delete">DELETE</a>
+
             </div>
 
         </form>

@@ -54,7 +54,6 @@ if(!empty($book_id)){
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,16 +85,14 @@ if(!empty($book_id)){
 
 <main>
 
-    <!-- TODO kontrola veškerého imputu pomocí JavaScriptu pro uživatele, aby viděl -->
-
     <div class="edit">
 
         <form action="includes/save.inc.php" method="POST">
 
-            <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($book_id);?>">
+            <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($book_id);?>" >
 
             <label for="name">Name of the book :</label><br>
-            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($book_name);?>"><br>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($book_name);?>" required><br>
 
             <!-- TODO přidat možnost/výčet již existujících autorů a doplňování, aby se nestalo, že stejného autora napíšeme různými způsoby (nová tabulka není potřeba, autoři se neobjevují často) -->
             <label for="author">Author :</label><br>
@@ -155,12 +152,10 @@ if(!empty($book_id)){
 
             <div class="buttons">
                 <input type="submit" value="SUBMIT" class="btn submit">
-                <!-- TODO popup jestli opravdu nechci uložit změny -->
-                <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "page.php?id=".$book_id;}?>" class="btn back">BACK</a>
 
-                <!-- TODO schovat, pokud vytváříme novou knihu -->
-                <!-- TODO Popup jestli opravdu chci smazat -->
-                <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "includes/delete.inc.php?id=".$book_id;} ?>" class="btn delete">DELETE</a>
+                <button type="button" class="btn back" id="backButton">BACK</button>
+
+                <button type="button" id="deleteButton" class="btn delete">DELETE</button>
 
             </div>
 
@@ -169,6 +164,64 @@ if(!empty($book_id)){
     </div>
 
 </main>
+
+<script>
+    //Waiting for the whole page to load
+    document.addEventListener('DOMContentLoaded', function (){
+       init();
+    });
+
+
+    function init(){
+        //Tady sakra pozor, kdyby se někdy měnila URL nějakým způsobem, momentálně počítá s tím, že v url bude pouze jeden ? parametr
+        const url = window.location.href;
+
+        const book_exist = url.indexOf('=') !== -1; // true OR false
+
+        let book_id = null;
+
+        if (book_exist){
+            book_id = url.slice(url.indexOf('=') +1);
+            console.log(book_id);
+        } else {
+            //Kontrola v případě, že je to create page, zrušíme existendo delete buttonu
+            let deleteButton = document.getElementById("deleteButton");
+            deleteButton.setAttribute("style", "display: none");
+        }
+
+        const backButton = document.getElementById("backButton");
+        if (backButton) backButton.addEventListener("click", goBack);
+
+
+        function goBack(){
+            let text = "Are you sure you want to go back without saving the changes?";
+
+            if (confirm(text)){
+                //kontrola, zda je to create nebo edit page
+                if (book_exist){
+                    window.location.replace("page.php?id=" + book_id);
+                } else {
+                    window.location.replace("index.php");
+                }
+            }
+        }
+
+        const deleteButton = document.getElementById("deleteButton");
+        if(deleteButton) deleteButton.addEventListener("click", deleteBook);
+
+        function deleteBook(){
+            let text = "Are you sure you want to delete this book?";
+
+            if (confirm(text)){
+                if (book_exist){
+                    window.location.replace("includes/delete.inc.php?id="+book_id);
+                }else {
+                    window.location.replace("index.php");
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>

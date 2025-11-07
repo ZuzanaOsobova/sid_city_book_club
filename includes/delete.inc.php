@@ -2,6 +2,7 @@
 require_once 'dbh.inc.php';
 
 if (!empty($_GET['id'])){
+    //TODO Tohle nejspíš potřebuje zčeknout a upravit, aby to bylo ok
     $book_id = (int)$_GET['id'];
 
     //TODO check jestli je user přihlášen

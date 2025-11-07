@@ -27,16 +27,25 @@ require_once 'includes/months.inc.php';
 <header>
     <a href="index.php"><div class="logo"><img src="icons/logo_light.svg"></div></a>
     <h1>SidCity Book Club</h1>
+
+    <!-- TODO photos of SID -->
     <span style="font-family: Bahnschrift,serif;">*A LOT OF PHOTOS OF SID READING INCOMING*</span>
+
+    <!-- TODO login link -->
 </header>
 
 <main>
 
     <h2>About</h2>
     <div class="about">
+        <!-- TODO Upravit popisek??? -->
         <p>Hello there Traveller.</p>
         <p>This is website dedicated to the SidCity Book Club, which we are having over at Discord. We have read quite a few books, so I have decided to create a website where we can store them all, see when we read what and how we liked it.</p>
+        <p>The books are ordered by last read. So the latest read comes up first.</p>
 
+        <!-- TODO some pretty image of Sid or the bookclub with books -->
+
+        <!-- TODO odebrat, nebo schovat za login -->
         <br>
         <a href="edit.php">THIS WAY TO EDIT</a>
     </div>
@@ -44,6 +53,11 @@ require_once 'includes/months.inc.php';
 
     <div class="book_table">
         <h2>Books</h2>
+
+        <!-- TODO Přidat možnost filteru (nevím jak, ale eventuelně)
+         TODO 1) filter rok a měsíc
+         TODO 2) lookup buďto autor nebo jméno knihy
+         -->
 
         <table>
             <thead>
@@ -61,7 +75,7 @@ require_once 'includes/months.inc.php';
             <?php
 
             try {
-                $query = "SELECT * FROM books;";
+                $query = "SELECT * FROM books ORDER BY year DESC, month DESC;";
 
                 $stmt = $pdo->prepare($query);
 

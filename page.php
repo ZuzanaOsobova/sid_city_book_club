@@ -4,7 +4,7 @@ require_once 'includes/months.inc.php';
 
 
 
-
+//TODO tady asi kontrola, že ID je v pohodě
 $book_id = $_GET['id'];
 
 $book_name="";
@@ -76,8 +76,10 @@ catch (PDOException $e) {
 
     <a href="index.php" class="back_button"><img src="icons/arrow_left.svg"> BACK</a>
 
+    <!-- TODO tady se pokusit opravit layout obrázku -->
     <div class="book_page">
 
+        <!-- TODO upravit, aby když není obrázek, tak to nezabíralo místo a book_info se roztáhlo -->
         <div class="image"><img src="images/<?php echo $book_cover?>"></div>
 
         <div class="book_info">
@@ -125,6 +127,7 @@ catch (PDOException $e) {
 
     </div>
 
+    <!-- TODO schovat link pouze pro přihlášené uživatele -->
     <a href="edit.php?id=<?php echo $book_id;?>" class="back_button" id="edit_btn">EDIT</a>
 
 </main>

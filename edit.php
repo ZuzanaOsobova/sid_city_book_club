@@ -86,6 +86,8 @@ if(!empty($book_id)){
 
 <main>
 
+    <!-- TODO kontrola veškerého imputu pomocí JavaScriptu pro uživatele, aby viděl -->
+
     <div class="edit">
 
         <form action="includes/save.inc.php" method="POST">
@@ -95,6 +97,7 @@ if(!empty($book_id)){
             <label for="name">Name of the book :</label><br>
             <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($book_name);?>"><br>
 
+            <!-- TODO přidat možnost/výčet již existujících autorů a doplňování, aby se nestalo, že stejného autora napíšeme různými způsoby (nová tabulka není potřeba, autoři se neobjevují často) -->
             <label for="author">Author :</label><br>
             <input type="text" id="author" name="author" value="<?php echo htmlspecialchars($book_author);?>"><br>
 
@@ -102,7 +105,7 @@ if(!empty($book_id)){
             <input type="number" id="year" name="year" min="2020" value="<?php echo htmlspecialchars($book_year);?>"><br>
 
 
-            <!-- Tady bude nejspíš potřeba dělat JS nebo něco podobného jiného, protože preselected se dělá pomocí atributu selected u specifické option ugh-->
+            <!-- TODO Tady bude nejspíš potřeba dělat JS nebo něco podobného jiného, protože preselected se dělá pomocí atributu selected u specifické option ugh-->
             <label for="month">Month :</label><br>
             <select id="month" name="month">
                 <option value="1">January</option>
@@ -123,6 +126,7 @@ if(!empty($book_id)){
             <label for="recommended">Recommended by :</label><br>
             <input type="text" id="recommended" name="recommended" value="<?php echo htmlspecialchars($book_recommended);?>"> <br>
 
+            <!-- TODO upravit až budu mít pro žánry vlastní table -->
             <label for="genre">Genre :</label><br>
             <input type="text" id="genre" name="genre" value="<?php echo htmlspecialchars($book_genre);?>"> <br>
 
@@ -132,6 +136,8 @@ if(!empty($book_id)){
             <label for="thoughts">Book Club Thoughts :</label><br>
             <textarea id="thoughts" name="thoughts"><?php echo htmlspecialchars($book_thoughts);?></textarea> <br>
 
+
+            <!-- TODO Bookcover možná i včetně náhledu coveru, který tam právě je -->
 
             <!--
             <label for="cover">Book cover :</label><br>
@@ -149,8 +155,11 @@ if(!empty($book_id)){
 
             <div class="buttons">
                 <input type="submit" value="SUBMIT" class="btn submit">
+                <!-- TODO popup jestli opravdu nechci uložit změny -->
                 <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "page.php?id=".$book_id;}?>" class="btn back">BACK</a>
 
+                <!-- TODO schovat, pokud vytváříme novou knihu -->
+                <!-- TODO Popup jestli opravdu chci smazat -->
                 <a href="<?php if (!isset($book_id)) { echo "index.php";} else { echo "includes/delete.inc.php?id=".$book_id;} ?>" class="btn delete">DELETE</a>
 
             </div>

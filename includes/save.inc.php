@@ -1,7 +1,7 @@
 <?php
 require_once 'dbh.inc.php';
 
-//Upravit handlení těchto user data, ničemu z toho nevěř, ale teď nevím, jak přesně to udělat
+// TODO Upravit handlení těchto user data, ničemu z toho nevěř, ale teď nevím, jak přesně to udělat
 
 if (!empty($_POST['id'])){
     $book_id = $_POST['id'];
@@ -24,7 +24,11 @@ echo $book_id . "<br>";
 
 
 if(!empty($book_id)){
+
+    //Tady upravujeme již existující knihu
+
     try {
+        // TODO upravit query, aby byla schopná přidat i obrázek
         $query = "
                 UPDATE books SET
                                  
@@ -67,6 +71,8 @@ if(!empty($book_id)){
     }
 } else {
 
+    //Tady insertujeme novou knihu
+
     try {
         $query = "
         INSERT INTO books (name, year, author, month, recommended, genre, description, thoughts)
@@ -88,6 +94,7 @@ if(!empty($book_id)){
 
         $stmt->execute();
 
+        //TODO přidat přesměrování na právě vzniklou page pro danou knihu
         header("Location:../index.php");
         //header("Location:../page.php?id=".$book_id);
     }

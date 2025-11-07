@@ -1,0 +1,13 @@
+1) Login and user
+    Login page
+    User page - settings (change password, create new book)
+    Check all edit and delete/save for logged-in user
+    database table for users
+        possibly already add user/admin
+
+2) Change database to include table of genres
+    create two new tables (genres, genre-book M:N)
+    edit.php change so it shows all the genres and is a possible select
+        I will just add new genres in the database
+        make it multi select
+    page.php edit so it shows all the genres from correct table

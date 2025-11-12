@@ -111,7 +111,7 @@ catch (PDOException $e) {
 
             <div class="info">
                 <span class="info_label">Genre: </span>
-                <span class="info_text"><?php echo $book_genre?></span>
+                <span class="info_text"><?php echo $book_genre?> SCIFI</span>
             </div>
 
             <div class="info">

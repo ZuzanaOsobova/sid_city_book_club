@@ -47,3 +47,11 @@ h2 {
     font-family: Anonymous Pro, serif;
     color: var(--black);
 }
+
+.about_image {
+    min-width: 200px;
+    width: 20%;
+    height: auto;
+    padding: 1%;
+    float: right;
+}

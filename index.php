@@ -29,35 +29,26 @@ require_once 'includes/months.inc.php';
     <h1>SidCity Book Club</h1>
 
     <!-- TODO photos of SID -->
-    <span style="font-family: Bahnschrift,serif;">*A LOT OF PHOTOS OF SID READING INCOMING*</span>
+    <span style="font-family: Bahnschrift,serif;">*SID READING INCOMING*</span>
 
-    <!-- TODO login link -->
 </header>
 
 <main>
 
-    <h2>About</h2>
-    <div class="about">
-        <!-- TODO Upravit popisek??? -->
-        <p>Hello there Traveller.</p>
-        <p>This is website dedicated to the SidCity Book Club, which we are having over at Discord. We have read quite a few books, so I have decided to create a website where we can store them all, see when we read what and how we liked it.</p>
-        <p>The books are ordered by last read. So the latest read comes up first.</p>
-
-        <!-- TODO some pretty image of Sid or the bookclub with books -->
-
-        <!-- TODO odebrat, nebo schovat za login -->
-        <br>
-        <a href="edit.php">THIS WAY TO EDIT</a>
+    <div>
+        <img src="images/sid_jinn_smaller.jpg" class="about_image">
+        <h2>About</h2>
+        <div class="about">
+            <!-- TODO Upravit popisek??? -->
+            <p>Hello there Traveller.</p>
+            <p>This is website dedicated to the SidCity Book Club, which we are having over at Discord. We have read quite a few books, so I have decided to create a website where we can store them all, see when we read what and how we liked it.</p>
+            <p>The books are ordered by last read. So the latest read comes up first.</p>
+        </div>
     </div>
 
 
     <div class="book_table">
         <h2>Books</h2>
-
-        <!-- TODO Přidat možnost filteru (nevím jak, ale eventuelně)
-         TODO 1) filter rok a měsíc
-         TODO 2) lookup buďto autor nebo jméno knihy
-         -->
 
         <table>
             <thead>
@@ -85,7 +76,7 @@ require_once 'includes/months.inc.php';
 
                 foreach ($results as $item) {
                     ?>
-                    <tr>
+                    <tr onclick="window.location='page.php?id=<?php echo $item['id']?>'">
                         <td class="year"><?php echo $item['year']?></td>
                         <td class="month"><?php echo months($item['month']); ?></td>
                         <td class="book"><?php echo $item['name']?></td>

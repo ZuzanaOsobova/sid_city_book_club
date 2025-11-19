@@ -13,8 +13,6 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //TODO tohoto se eventuelně zbavit
-    echo "Connection successful";
 
 } catch (PDOException $e) {
 

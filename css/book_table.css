@@ -63,6 +63,10 @@ tr:hover {
     color: var(--white);
 }
 
+tbody tr:hover{
+    cursor: pointer;
+}
+
 tr:hover a {
     background-color: transparent;
     color: var(--white);

@@ -4,7 +4,6 @@ require_once 'includes/months.inc.php';
 
 
 
-//TODO tady asi kontrola, že ID je v pohodě
 $book_id = $_GET['id'];
 
 $book_name="";
@@ -12,7 +11,7 @@ $book_author="";
 $book_year = 0;
 $book_month = 0;
 $book_recommended = "";
-$book_genre = "";
+$book_genre = [];
 $book_description = "";
 $book_thoughts = "";
 $book_cover = "";
@@ -20,7 +19,11 @@ $book_cover = "";
 
 
 try {
-    $query = "SELECT * FROM books WHERE id = :book_id;";
+    $query = "SELECT books.name AS 'book_name', books.year, books.author, books.month, books.recommended, books.description, books.thoughts, books.cover, genres.name AS 'genre_name'
+            FROM books
+            INNER JOIN book_genre ON books.id = book_genre.book_id
+            INNER JOIN genres ON book_genre.genre_id = genres.id
+            WHERE books.id = :book_id;";
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":book_id", $book_id);
@@ -30,18 +33,22 @@ try {
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($results as $item) {
-        $book_name = $item['name'];
+        $book_name = $item['book_name'];
         $book_year = $item['year'];
         $book_author = $item['author'];
         $book_month = $item['month'];
         $book_recommended = $item['recommended'];
-        $book_genre = $item['genre'];
         $book_description = $item['description'];
         $book_thoughts = $item['thoughts'];
         $book_cover = $item['cover'];
+
+        $book_genre[] = $item['genre_name'];
     }
 
-
+    //Kontrola existence
+    if ($book_name === ""){
+        header("Location: index.php");
+    }
 }
 catch (PDOException $e) {
     die("Query failed: " . $e->getMessage());
@@ -69,19 +76,24 @@ catch (PDOException $e) {
 <header>
     <a href="index.php"><div class="logo"><img src="icons/logo_light.svg"></div></a>
     <h1>SidCity Book Club</h1>
-    <span style="font-family: Bahnschrift,serif;">*A LOT OF PHOTOS OF SID READING INCOMING*</span>
+    <span style="font-family: Bahnschrift,serif;">*SID READING INCOMING*</span>
 </header>
 
 <main>
 
     <a href="index.php" class="back_button"><img src="icons/arrow_left.svg"> BACK</a>
 
-    <!-- TODO tady se pokusit opravit layout obrázku -->
     <div class="book_page">
 
-        <!-- TODO upravit, aby když není obrázek, tak to nezabíralo místo a book_info se roztáhlo -->
-        <div class="image"><img src="images/<?php echo $book_cover?>"></div>
+        <!-- IMAGE -->
+        <?php
+        if (isset($book_cover)) {
+            echo "<div class=image><img src=images/$book_cover></div>";
+        }
+        ?>
 
+
+        <!-- TEXT -->
         <div class="book_info">
             <h2><?php echo $book_name?></h2>
 
@@ -111,7 +123,11 @@ catch (PDOException $e) {
 
             <div class="info">
                 <span class="info_label">Genre: </span>
-                <span class="info_text"><?php echo $book_genre?></span>
+                <span class="info_text"><?php
+                    foreach ($book_genre as $genre) {
+                        echo $genre . ", ";
+                    }
+                    ?></span>
             </div>
 
             <div class="info">
@@ -126,9 +142,6 @@ catch (PDOException $e) {
         </div>
 
     </div>
-
-    <!-- TODO schovat link pouze pro přihlášené uživatele -->
-    <a href="edit.php?id=<?php echo $book_id;?>" class="back_button" id="edit_btn">EDIT</a>
 
 </main>
 
